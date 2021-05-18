@@ -1,0 +1,23 @@
+.footer {
+    background-color: #111111;
+    color: #eeeeee;
+    border-top: 1px solid ;
+    height: 100px;  /* footer height */
+    padding-top: 40px;
+    display: block;
+    margin-top: 30px; /* space between content and footer */
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+.banner-prediksi {
+    padding:400px 0 350px;
+    background-color:#b0b0b0;
+    background-image:url("../images/doctor1.jpg");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    position:relative
+}
+    

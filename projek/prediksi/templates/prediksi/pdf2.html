@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>Title</title>
+    <style type="text/css">
+        body {
+            font-weight: 200;
+            font-size: 14px;
+        }
+
+        .header {
+            font-size: 10px;
+            font-weight: 10;
+            color: #000000;
+            text-align: center;
+
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: 100;
+            text-align: center;
+            padding: 10px 20px 0px 20px;
+        }
+
+        .title span {
+            color: #007cae;
+        }
+
+        .details {
+            padding: 10px 20px 0px 20px;
+            text-align: left !important;
+            margin-left: 40%;
+        }
+
+        .hrItem {
+            border: none;
+            height: -1px;
+            /* Set the hr color */
+            color: #333;
+            /* old IE */
+            background-color: #fff;
+            /* Modern Browsers */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 2px;
+            text-align: left;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .isi {
+            width: 300px;
+            padding: 50px;
+            margin: 20px;
+        }
+
+        .kepala {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+    <title>PDF | {{object.id_pasien}}</title>
+</head>
+
+<body>
+    <div class='header'>
+        <img src="http://127.0.0.1:8000/static/vendor/assets/images/logo/icon3.png" width="150" height="100">
+        <hr class='hrItem' />
+    </div>
+    <div class="kepala">
+        <h1 class="title">
+            Hasil Pemeriksaan
+        </h1>
+    </div>
+    <div class='details'>
+        <table>
+            <tr>
+                <td>ID Pasien</td>
+                <td>: {{data.id_pasien}}</td>
+                <td>Tgl. Permintaan</td>
+                <td>: {{data.publish}}</td>
+            </tr>
+            <tr>
+                <td>Nama Pasien</td>
+                <td>: {{data.nama}}</td>
+                <td>Pelayanan</td>
+                <td>: Deteksi CKD</td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td>: {{data.jenis}}</td>
+            </tr>
+            <tr>
+                <td>Umur</td>
+                <td>: {{data.umur}} tahun</td>
+            </tr>
+        </table>
+        <hr>
+        <table>
+            <tr>
+                <td><strong>ATTRIBUT</strong></td>
+                <td><strong>HASIL</strong></td>
+                <td><strong>SATUAN</strong></td>
+
+            </tr>
+        </table>
+        <hr>
+        <table>
+            <tr>
+                <td>Specific Gravity</td>
+                <td>{{data.sg}}</td>
+                <td>&nbsp; &nbsp; &nbsp;---</td>
+            </tr>
+            <tr>
+                <td>Albumin</td>
+                <td>{{data.al}}</td>
+                <td>&nbsp; &nbsp; &nbsp;g/L</td>
+            </tr>
+            <tr>
+                <td>Hemoglobin</td>
+                <td>{{data.hemo}}</td>
+                <td>&nbsp; &nbsp; &nbsp;g/dL</td>
+            </tr>
+            <tr>
+                <td>Hypertension</td>
+                <td>{% if data.htn == 1.0 %}
+                    Yes
+                    {% else %}
+                    No
+                    {% endif %}</td>
+                <td>&nbsp; &nbsp; &nbsp;---</td>
+            </tr>
+            <tr>
+                <td>Diabetes Mellitus</td>
+                <td>{% if data.dm == 1.0 %}
+                    Yes
+                    {% else %}
+                    No
+                    {% endif %}</td>
+                <td>&nbsp; &nbsp; &nbsp;---</td>
+            </tr>
+            <tr>
+                <td>Appetite</td>
+                <td>{% if data.appet == 1.0 %}
+                    Good
+                    {% else %}
+                    Poor
+                    {% endif %}</td>
+                <td>&nbsp; &nbsp; &nbsp;---</td>
+            </tr>
+        </table>
+        <hr>
+        <table>
+            <th><strong>HASIL</strong></th>
+            <th><strong>
+                    {% if data.prediksi == "ckd" %}
+                    <h2>CKD</h2>
+                    {% else %}
+                    <h2>NOT-CKD</h2>
+                    {% endif %}
+                </strong></th>
+        </table>
+        <hr>
+    </div>
+</body>
+
+</html>

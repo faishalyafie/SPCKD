@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block baner %}
+<section class="banner-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+
+                <h4>Caring for better life</h4>
+                <h1>Leading the way in medical excellence</h1>
+                <p>klik tombol mulai deteksi untuk memulai deteksi ! </p>
+                <a href="{% url 'prediksi:create' %}" class="template-btn mt-3">{{isi}}</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock baner %}
+
+
+{% block body %}
+<!-- Feature Area Starts -->
+<section class="feature-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="single-feature text-center item-padding">
+                    <img src="{% static 'vendor/assets/images/feature1.png' %}" alt="">
+                    <h3>advance technology </h3>
+                    <p class="pt-3">Memanfaatkan algoritma Data Mining dalam melakukan deteksi
+                    </p>
+                    <br>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single-feature text-center item-padding mt-4 mt-md-0">
+                    <img src="{% static 'vendor/assets/images/feature2.png' %}" alt="">
+                    <h3>easy to use</h3>
+                    <p class="pt-3">Memiliki tampilan sederhana yang memudahkan pengguna </p>
+                    <br><br>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single-feature text-center item-padding mt-4 mt-lg-0">
+                    <img src="{% static 'vendor/assets/images/feature3.png' %}" alt="">
+                    <h3>effective and efficient</h3>
+                    <p class="pt-3">Hanya membutuhkan sedikit attribut pemeriksaan</p>
+                    <br>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single-feature text-center item-padding mt-4 mt-lg-0">
+                    <img src="{% static 'vendor/assets/images/feature4.png' %}" alt="">
+                    <h3>more accurate</h3>
+                    <p class="pt-3"> Memiliki nilai akurasi yang lebih baik</p>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Feature Area End -->
+{% endblock body %}
+
+
+
+{% block bodybwh %}
+<!-- Welcome Area Starts -->
+<section class="welcome-area section-padding3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 align-self-center">
+                <div class="welcome-img">
+                    <img src="{% static 'vendor/assets/images/kidney.jpg' %}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="welcome-text mt-5 mt-lg-0">
+                    <h2>KIDNEY</h2>
+                    <p class="pt-3">
+                        <li> Ginjal adalah salah satu organ yang setiap harinya
+                            mampu menyaring sekitar 200 liter darah, limbah, dan mengatur
+                            keseimbangan asam-basa dalam tubuh.
+                        </li>
+                    </p>
+                    <p>
+                        <li>Memiliki ukuran berkisar 10–12 sentimeter atau sebesar
+                            kepalan tangan. Organ ini mengandung sekitar satu juta nefron, yaitu saringan darah yang
+                            sangat kecil. </li>
+                    </p>
+                    <p>
+                        <li> Organ yang relatif kecil ini memiliki berbagai macam peran penting bagi kesehatan tubuh.
+                            Sehingga disarankan memeriksa keadaan dan fungsi ginjal untuk mengetahui apakah fungsi
+                            ginjal dalam tubuh dalam kondisi baik atau tidak.</li>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Welcome Area End -->
+{% endblock bodybwh %}
